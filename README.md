@@ -1,7 +1,7 @@
 # Second Token-based AuthN/Z Hackathon
 
-When: 16-17-18 September 2020
-Agenda: https://indico.cern.ch/e/tb-hackathon
+- When: 16-17-18 September 2020
+- Agenda: https://indico.cern.ch/e/tb-hackathon
 
 ## Topics under discussion
 
@@ -32,7 +32,7 @@ The WLCG storage area authorization at SEs configured as follows:
 
 - Fully token-based transfers managed by RUCIO with scope and group-based
   authorization
-- Audience restrictions honoured at major services
+- Audience restrictions honoured at all services
 - Development of a first incarnation of TPC integration smoke test suite, based
   on Robot Framework
 - Local user mapping proposal
