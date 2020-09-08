@@ -38,6 +38,6 @@ The WLCG storage area authorization at SEs configured as follows:
 - Local user mapping proposal
 
 A fine-grained list of possible objectives, per component, is given
-[here](./objectives).
+[here](./objectives.md).
 
 [wlcg-vo]: http://https://wlcg.cloud.cnaf.infn.it
