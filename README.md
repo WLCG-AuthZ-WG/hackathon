@@ -37,4 +37,7 @@ The WLCG storage area authorization at SEs configured as follows:
   on Robot Framework
 - Local user mapping proposal
 
+A fine-grained list of possible objectives, per component, is given
+[here](./objectives).
+
 [wlcg-vo]: http://https://wlcg.cloud.cnaf.infn.it
