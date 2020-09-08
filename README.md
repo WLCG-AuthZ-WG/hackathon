@@ -1,6 +1,6 @@
 # Second Token-based AuthN/Z Hackathon
 
-- When: 16-17-18 September 2020
+- When: 16-17-18 September 2020, 15-18 CEST
 - Agenda: https://indico.cern.ch/e/tb-hackathon
 
 ## Topics under discussion
