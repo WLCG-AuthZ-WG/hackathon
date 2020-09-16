@@ -24,6 +24,8 @@ The WLCG storage area authorization at SEs configured as follows:
   read files) to all members of the WLCG VO, i.e.:
   - all clients presenting a valid VOMS proxy for the WLCG VO
   - all clients presenting a valid JWT token issued by the WLCG token issuer
+- Write access (with the exclusion of the `/protected` folder) is granted
+  to any client presenting a valid WLCG VO proxy
 - Write-access to the `/protected` folder (and sub-folders) is granted to the following principals:
   - all clients presenting a valid VOMS proxy with the `/wlcg/Role=test` role
   - all clients presenting a valid JWT token with the `/wlcg/test` group
