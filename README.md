@@ -28,6 +28,10 @@ The WLCG storage area authorization at SEs configured as follows:
   - all clients presenting a valid VOMS proxy with the `/wlcg/Role=test` role
   - all clients presenting a valid JWT token with the `/wlcg/test` group
 
+To enable JWT profile compliance testing, it would help to have a storage area
+at each SE configured to trust the `https://tf.cloud.cnaf.infn.it` token
+issuer.
+
 ## Hackathon objectives
 
 - Fully token-based transfers managed by RUCIO with scope and group-based
