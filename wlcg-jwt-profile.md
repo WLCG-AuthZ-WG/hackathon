@@ -82,7 +82,10 @@ of the form `condor://condor.example.com`.
 
 ### Requesting audiences from IAM 
 
-TBD
+With `oidc-agent` the audience can be requested using the `--aud` `oidc-token`
+parameter. More info here:
+
+https://wlcg-authz-wg.github.io/wlcg-authz-docs/token-based-authorization/oidc-agent/
 
 ## Scope-based authorization
 
@@ -96,4 +99,62 @@ https://github.com/WLCG-AuthZ-WG/common-jwt-profile/blob/master/profile.md#group
 
 ### Requesting groups
 
-TBD
+Groups are requested by including the `wlcg.groups` scope in a token request.
+oidc-agent example:
+
+```
+> export BT=$(oidc-token wlcg -s openid -w wlcg.groups)
+> echo $BT | jwt
+...
+
+✻ Payload
+{
+  "wlcg.ver": "1.0",
+  "sub": "a1b98335-9649-4fb0-961d-5a49ce108d49",
+  "aud": "https://wlcg.cern.ch/jwt/v1/any",
+  "nbf": 1600317974,
+  "scope": "openid wlcg.groups",
+  "iss": "https://wlcg.cloud.cnaf.infn.it/",
+  "exp": 1600321574,
+  "iat": 1600317974,
+  "jti": "c05c4180-6118-4dda-8c68-f638b4db343d",
+  "client_id": "a0deae4e-3843-4167-b967-5dc0eff7b953",
+  "wlcg.groups": [
+    "/wlcg",
+    "/wlcg/xfers"
+  ]
+}
+```
+
+The `/wlgc/test` group is configured as an _optional_ group, i.e. one that is
+not automatically included in the list of groups but must be explicitly requested,
+as in the following example:
+
+```
+> export BT=$(oidc-token wlcg -s openid -s wlcg.groups:/wlcg/test)
+> echo $BT | jwt
+...
+✻ Payload
+{
+  "wlcg.ver": "1.0",
+  "sub": "a1b98335-9649-4fb0-961d-5a49ce108d49",
+  "aud": "https://wlcg.cern.ch/jwt/v1/any",
+  "nbf": 1600318044,
+  "scope": "openid wlcg.groups:/wlcg/test",
+  "iss": "https://wlcg.cloud.cnaf.infn.it/",
+  "exp": 1600321644,
+  "iat": 1600318044,
+  "jti": "15b256c5-2026-4e6c-9103-a70e9ee121f8",
+  "client_id": "a0deae4e-3843-4167-b967-5dc0eff7b953",
+  "wlcg.groups": [
+    "/wlcg/test",
+    "/wlcg",
+    "/wlcg/xfers"
+  ]
+}
+   Issued At: 1600318044 9/17/2020, 6:47:24 AM
+   Not Before: 1600318044 9/17/2020, 6:47:24 AM
+   Expiration Time: 1600321644 9/17/2020, 7:47:24 AM
+
+✻ Signature AqxmqCDE4bU1G2b87LvT-kHdiXGo5rw0zQ8SVtLUbnUfAx4X3TztWe0ZaIoaADSz64xPIjfzpCa7kpvNRHu09EyDvXJwxMMbMsCgwUZCfWke3h2TVpY3OgULq_sYqATJvY_uBsoSG6-yGOKeo5ikoHuDSk9ePHjrVb2Bybc2ko4
+```
