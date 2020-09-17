@@ -48,4 +48,4 @@ issuer.
 A fine-grained list of possible objectives, per component, is given
 [here](./objectives.md).
 
-[wlcg-vo]: http://https://wlcg.cloud.cnaf.infn.it
+[wlcg-vo]: https://wlcg.cloud.cnaf.infn.it
