@@ -10,6 +10,8 @@
   - Scope-based authorization
   - Group-based authorization
 - [Local user mapping](./local-user-mapping.md)
+- [Bearer token discovery
+  support](https://github.com/WLCG-AuthZ-WG/bearer-token-discovery/blob/master/specification.md)
 
 ## Pre-requisites
 
