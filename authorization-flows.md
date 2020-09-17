@@ -52,8 +52,12 @@ Here RUCIO manages a token-based third-party transfer, managed by FTS, acting on
    obtained token
 
 3. RUCIO exchanges this token with one suitable to submit transfers to FTS.
-   This is done using the `token exchange` flow. Audience is restricted using
-   the `audience` parameter. Below is an example token exchange request:
+   Also RUCIO needs the ability to manage the user transfer while the user is
+   disconnected. The set of scopes requested in the exchange is built by
+   expanding the scopes originally linked to the token with the
+   `offline_access` scope. Audience is restricted using the `audience` parameter. 
+
+   Below is an example token exchange request:
 
 ```
 POST /token HTTP/2
@@ -66,6 +70,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=urn:ietf:params:oauth:grant-type:token-exchange
 &subject_token=eyJra…HvBfTpM
 &audience=https://fts.example
+&scope=openid%20wlcg.groups%20offline_access
 ```
 
 4. FTS exchange the received token with a couple of tokens suitable to manage
