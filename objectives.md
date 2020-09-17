@@ -16,6 +16,8 @@
 
 - Audience support
 - Audience request support (to request tokens with the 'FTS' audience)
+- Group-based authorization support
+- Support for [Bearer token discovery][bearer-token-discovery] on the CLI
 
 ## GFAL
 
@@ -34,12 +36,14 @@
 - Fine grained scope request support
   - Request the minimum scopes to manage a transfer
 - Group-based authorization support
+- Support for [Bearer token discovery][bearer-token-discovery] on the CLI
 
 ## dCache
 
 - Audience support
 - Fine-grained scope-based authorization support
 - WLCG group-based authorization support
+- Support for [Bearer token discovery][bearer-token-discovery] on the CLI
 
 ## XRooTD
 
