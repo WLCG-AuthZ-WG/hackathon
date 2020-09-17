@@ -21,7 +21,9 @@
 The WLCG storage area authorization at SEs configured as follows:
 
 - WLCG JWT profile capability-based authorization enabled
-  - AuthZ will be based on the `storage.*` scopes in the token
+  - AuthZ will be based on the `storage.*` scopes in the token, e.g. a token
+    with the `storage.modify:/` issued by the WLCG token issuer will grant
+    write access on the whole storage area.
 - Read-only access (i.e., the ability to list directory contents and
   read files) to all members of the WLCG VO, i.e.:
   - all clients presenting a valid VOMS proxy for the WLCG VO
